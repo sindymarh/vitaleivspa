@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vitaleivspa/static/css/main.b2cff93e.css",
-    "main.js": "/vitaleivspa/static/js/main.a12386e2.js",
+    "main.css": "/vitaleivspa/static/css/main.e6c13ad2.css",
+    "main.js": "/vitaleivspa/static/js/main.46a6c549.js",
     "static/js/453.a672a9d9.chunk.js": "/vitaleivspa/static/js/453.a672a9d9.chunk.js",
     "index.html": "/vitaleivspa/index.html",
-    "main.b2cff93e.css.map": "/vitaleivspa/static/css/main.b2cff93e.css.map",
-    "main.a12386e2.js.map": "/vitaleivspa/static/js/main.a12386e2.js.map",
+    "main.e6c13ad2.css.map": "/vitaleivspa/static/css/main.e6c13ad2.css.map",
+    "main.46a6c549.js.map": "/vitaleivspa/static/js/main.46a6c549.js.map",
     "453.a672a9d9.chunk.js.map": "/vitaleivspa/static/js/453.a672a9d9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2cff93e.css",
-    "static/js/main.a12386e2.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.46a6c549.js"
   ]
 }
