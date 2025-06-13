@@ -1,0 +1,14 @@
+.landing-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.landing-page img {
+  margin-bottom: 20px;
+}
+
+.landing-page button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
