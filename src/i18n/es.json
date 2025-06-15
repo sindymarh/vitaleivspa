@@ -1,0 +1,30 @@
+{
+  "header": {
+    "home": "Inicio",
+    "book": "Reservar"
+  },
+  "welcome": "Bienvenido a Vitale IV Spa",
+  "description": "Tu camino hacia el rejuvenecimiento y el bienestar con infusiones vitamínicas.",
+  "book": "Reserva tu sesión",
+  "contactUs": "Contáctanos",
+  "booking": {
+    "title": "Reserva tu sesión",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "select_time": "Selecciona un horario",
+    "morning": "Mañana (9am–12pm)",
+    "afternoon": "Tarde (1pm–4pm)",
+    "evening": "Noche (5pm–8pm)",
+    "submit": "Confirmar reserva"
+  },
+  "confirmation": {
+    "title": "Reserva confirmada",
+    "name": "Nombre",
+    "date": "Fecha",
+    "time": "Horario",
+    "no_data": "No se encontraron datos de reserva.",
+    "back_home": "Volver al inicio"
+  }
+}
+

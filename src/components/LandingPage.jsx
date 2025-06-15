@@ -1,34 +1,30 @@
-// LandingPage.jsx
-
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-{/*import Header from './Header';*/}
+import Header from './Header';
 
 const LandingPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div style={styles.wrapper}>
-    {/* <Header /> */}
       <div style={styles.container}>
         <img 
           src={process.env.PUBLIC_URL + '/img/logo192.png'} 
           alt="Vitale IV Spa Logo" 
           style={styles.logo}
         />
-        <h1 style={styles.title}>Welcome to Vitale IV Spa</h1>
-        <p style={styles.description}>Your path to rejuvenation and wellness with vitamin infusions.</p>
+        <h1 style={styles.title}>{t('welcome')}</h1>
+        <p style={styles.description}>{t('description')}</p>
         <Link to="/book">
-          <button style={styles.button}>Book Your Session</button>
+          <button style={styles.button}>{t('book')}</button>
         </Link>
       </div>
-
       <footer style={styles.footer}>
-        <p>Contact us: <a href="mailto:contact@vitaleivspa.com">contact@vitaleivspa.com</a></p>
-        <div style={styles.socials}>
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a> |
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"> Facebook</a> |
-          <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer"> WhatsApp</a>
-        </div>
-        <p style={{ fontSize: '12px', marginTop: '10px' }}>© {new Date().getFullYear()} Vitale IV Spa. All rights reserved.</p>
+        <p>{t('contactUs')}: <a href="mailto:sindymarh@gmail.com">contact@vitaleivspa.com</a></p>
+        <p style={{ fontSize: '12px', marginTop: '10px' }}>
+          © {new Date().getFullYear()} Vitale IV Spa. All rights reserved.
+        </p>
       </footer>
     </div>
   );
@@ -77,11 +73,9 @@ const styles = {
     backgroundColor: '#f5f5f5',
     color: '#333',
     borderTop: '1px solid #ccc'
-  },
-  socials: {
-    marginTop: '10px'
   }
 };
 
 export default LandingPage;
+
 

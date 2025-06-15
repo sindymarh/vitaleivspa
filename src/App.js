@@ -9,13 +9,15 @@ import WhatsAppButton from './components/WhatsAppButton';
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Header />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/book" element={<BookingForm />} />
-        <Route path="/confirmation" element={<ConfirmationPage />} />
-      </Routes>
-      <WhatsAppButton />
+      <div style={{ position: 'relative', minHeight: '100vh' }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/book" element={<BookingForm />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
+        </Routes>
+        <WhatsAppButton />
+      </div>
     </Router>
   );
 }

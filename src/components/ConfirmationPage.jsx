@@ -1,59 +1,65 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Header from './Header';
 
 const ConfirmationPage = () => {
-  const { state } = useLocation();
-  const { name, email, date, timeBlock } = state || {};
+  const { t } = useTranslation();
+  const location = useLocation();
+  const data = location.state;
 
   return (
-    <div style={styles.wrapper}>
-      <div style={styles.card}>
-        <h2 style={styles.title}>Booking Confirmed ✅</h2>
-        <p>Thank you, <strong>{name}</strong>!</p>
-        <p>Your session is booked for <strong>{date}</strong> at <strong>{timeBlock}</strong>.</p>
-        <p>We’ll contact you at <strong>{email}</strong> for confirmation.</p>
-        <Link to="/" style={styles.link}>
-          <button style={styles.button}>Back to Home</button>
+    <>
+      <div style={styles.container}>
+        <h2 style={styles.title}>{t('confirmation.title')}</h2>
+        {data ? (
+          <div style={styles.details}>
+            <p><strong>{t('confirmation.name')}:</strong> {data.name}</p>
+            <p><strong>{t('confirmation.date')}:</strong> {data.date}</p>
+            <p><strong>{t('confirmation.time')}:</strong> {data.timeBlock}</p>
+          </div>
+        ) : (
+          <p>{t('confirmation.no_data')}</p>
+        )}
+        <Link to="/">
+          <button style={styles.button}>{t('confirmation.back_home')}</button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 
 const styles = {
-  wrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    padding: '40px 20px'
-  },
-  card: {
-    maxWidth: '500px',
-    width: '100%',
-    background: '#e9f9ee',
+  container: {
+    maxWidth: '600px',
+    margin: '40px auto',
     padding: '30px',
+    backgroundColor: '#f9f9f9',
     borderRadius: '10px',
-    textAlign: 'center',
-    color: '#2e7d32',
-    boxShadow: '0 0 10px rgba(0,0,0,0.1)'
+    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+    textAlign: 'center'
   },
   title: {
-    marginBottom: '20px'
+    fontSize: '1.8rem',
+    marginBottom: '20px',
+    color: '#333'
+  },
+  details: {
+    marginBottom: '20px',
+    fontSize: '16px',
+    color: '#555',
+    textAlign: 'left'
   },
   button: {
-    marginTop: '20px',
-    padding: '10px 20px',
+    padding: '12px 24px',
+    fontSize: '16px',
     backgroundColor: '#4CAF50',
     color: 'white',
     border: 'none',
     borderRadius: '6px',
-    fontSize: '16px',
     cursor: 'pointer'
-  },
-  link: {
-    textDecoration: 'none'
   }
 };
 
 export default ConfirmationPage;
-
 

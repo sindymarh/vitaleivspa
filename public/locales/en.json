@@ -1,0 +1,30 @@
+{
+  "header": {
+    "home": "Home",
+    "book": "Book"
+  },
+  "welcome": "Welcome to Vitale IV Spa",
+  "description": "Your path to rejuvenation and wellness with vitamin infusions.",
+  "book": "Book Your Session",
+  "contactUs": "Contact us",
+  "booking": {
+    "title": "Book Your Session",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "select_time": "Select Time Block",
+    "morning": "Morning (9am–12pm)",
+    "afternoon": "Afternoon (1pm–4pm)",
+    "evening": "Evening (5pm–8pm)",
+    "submit": "Confirm Booking"
+  },
+  "confirmation": {
+    "title": "Booking Confirmed",
+    "name": "Name",
+    "date": "Date",
+    "time": "Time",
+    "no_data": "No booking data found.",
+    "back_home": "Back to Home"
+  }
+}
+

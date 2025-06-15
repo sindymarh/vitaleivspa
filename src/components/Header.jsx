@@ -1,64 +1,58 @@
 // src/components/Header.jsx
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+
   return (
     <header style={styles.header}>
-      <div style={styles.logoSection}>
-        <img
-          src={process.env.PUBLIC_URL + '/img/logo192.png'}
-          alt="Logo"
-          style={styles.logo}
-        />
-        <span style={styles.title}>Vitale IV Spa</span>
+      <div>
+        <Link to="/" style={getLinkStyle(location.pathname === '/')}>
+	  {t('header.home')}
+	</Link>
+	<Link to="/book" style={getLinkStyle(location.pathname === '/book')}>
+	  {t('header.book')}
+	</Link>
       </div>
-      <nav style={styles.nav}>
-        <Link to="/" style={styles.link}>Home</Link>
-        <Link to="/book" style={styles.link}>Book</Link>
-        {/* Puedes agregar más secciones si quieres */}
-      </nav>
+
+      <select
+        value={i18n.language}
+        onChange={(e) => i18n.changeLanguage(e.target.value)}
+        style={styles.select}
+      >
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
     </header>
   );
 };
 
 const styles = {
   header: {
-    position: 'sticky',
-    top: 0,
-    zIndex: 100,
-    backgroundColor: '#ffffff',
-    borderBottom: '1px solid #ddd',
-    padding: '10px 20px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'wrap'
+    backgroundColor: '#f0f0f0',
+    padding: '10px 20px',
+    borderBottom: '1px solid #ccc'
   },
-  logoSection: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  logo: {
-    width: '40px',
-    height: '40px',
-    marginRight: '10px'
-  },
-  title: {
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    color: '#333'
-  },
-  nav: {
-    display: 'flex',
-    gap: '15px'
-  },
-  link: {
-    textDecoration: 'none',
-    color: '#4CAF50',
-    fontWeight: 'bold'
+  select: {
+    fontSize: '14px',
+    padding: '6px',
+    borderRadius: '4px'
   }
 };
 
+const getLinkStyle = (active) => ({
+  marginRight: '15px',
+  textDecoration: 'none',
+  color: active ? '#4CAF50' : '#333',
+  fontWeight: active ? 'bold' : 'normal'
+});
+
 export default Header;
+
+
