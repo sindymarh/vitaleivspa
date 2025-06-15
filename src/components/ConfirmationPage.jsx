@@ -1,26 +1,59 @@
-// ConfirmationPage.jsx
-
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const ConfirmationPage = () => {
-  const location = useLocation();
-  const { date, timeBlock, name, email, phone } = location.state || {};
+  const { state } = useLocation();
+  const { name, email, date, timeBlock } = state || {};
 
   return (
-    <div className="confirmation-page">
-      <h1>Reservation Confirmed!</h1>
-      <p>Thank you for booking with Vitale IV Spa. Here are the details of your appointment:</p>
-      <ul>
-        <li><strong>Name:</strong> {name}</li>
-        <li><strong>Email:</strong> {email}</li>
-        <li><strong>Phone:</strong> {phone}</li>
-        <li><strong>Date:</strong> {date}</li>
-        <li><strong>Time Block:</strong> {timeBlock}</li>
-      </ul>
-      <p>We look forward to seeing you!</p>
+    <div style={styles.wrapper}>
+      <div style={styles.card}>
+        <h2 style={styles.title}>Booking Confirmed ✅</h2>
+        <p>Thank you, <strong>{name}</strong>!</p>
+        <p>Your session is booked for <strong>{date}</strong> at <strong>{timeBlock}</strong>.</p>
+        <p>We’ll contact you at <strong>{email}</strong> for confirmation.</p>
+        <Link to="/" style={styles.link}>
+          <button style={styles.button}>Back to Home</button>
+        </Link>
+      </div>
     </div>
   );
-}
+};
+
+const styles = {
+  wrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '40px 20px'
+  },
+  card: {
+    maxWidth: '500px',
+    width: '100%',
+    background: '#e9f9ee',
+    padding: '30px',
+    borderRadius: '10px',
+    textAlign: 'center',
+    color: '#2e7d32',
+    boxShadow: '0 0 10px rgba(0,0,0,0.1)'
+  },
+  title: {
+    marginBottom: '20px'
+  },
+  button: {
+    marginTop: '20px',
+    padding: '10px 20px',
+    backgroundColor: '#4CAF50',
+    color: 'white',
+    border: 'none',
+    borderRadius: '6px',
+    fontSize: '16px',
+    cursor: 'pointer'
+  },
+  link: {
+    textDecoration: 'none'
+  }
+};
 
 export default ConfirmationPage;
+
+
